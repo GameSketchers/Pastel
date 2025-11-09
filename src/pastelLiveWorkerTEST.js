@@ -133,7 +133,7 @@ class pastelLiveSockett{
     const roomId = roomCode.substring(2);
     const ws = new WebSocket(`wss://${ip}/__cpw.php?u=d3NzOi8vc2VydmVyMD${scode}uZ2FydGljLmlvL3NvY2tldC5pby8/RUlPPTMmdHJhbnNwb3J0PXdlYnNvY2tldA==&o=aHR0cHM6Ly9nYXJ0aWMuaW8=`);
     ws.ip=ip;
-    ws.language=language;
+    ws.language=String(language);
     ws.roomCode=roomCode;
     ws.fallbackIndex=index;
     ws.onopen = () => {
@@ -200,4 +200,5 @@ self.onmessage = ({ data }) => {
     });
 
 }
+
 
