@@ -142,7 +142,7 @@ class pastelLiveSockett{
     };
     ws.onmessage = e => {
      const d = e.data;
-     if (d[0] !== '4' || d[1] !== '2' || d[5] !== '0') return;
+     if (d[0] === '4' && d[1] === '2' && d[4] === '0') return;
      this.handleMessage(ws, JSON.parse(d.substring(2)));
    };
     ws.onerror = ws.onclose = () => {this.removeSocket(ws)};
@@ -200,3 +200,4 @@ self.onmessage = ({ data }) => {
     });
 
 }
+
