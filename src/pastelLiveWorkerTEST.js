@@ -54,7 +54,7 @@ class PastelLiveManager {
     isPlayerFiltered(player, lang, roomCode) {
         if (this.playerFilter.language !== 'all' && this.playerFilter.language !== lang) return false;
         if (!this.playerFilter.filterText.length) return true;
-        const nameLower = player.name.toLowerCase();
+        const nameLower = player.nick.toLowerCase();
         const roomLower = roomCode.toLowerCase();
         return this.playerFilter.filterText.some(ft => nameLower.includes(ft) || roomLower.includes(ft));
     }
@@ -137,8 +137,10 @@ class pastelLiveSockett{
     ws.roomCode=roomCode;
     ws.fallbackIndex=index;
     ws.onopen = () => {
+    setTimeout(function(){
       ws.send(`42[12,{"v":20000,"sala":"${roomId}"}]`);
       ws.send(`42[46,0]`);
+    },20)
     };
     ws.onmessage = e => {
       const d = e.data;
@@ -200,6 +202,7 @@ self.onmessage = ({ data }) => {
     });
 
 }
+
 
 
 
