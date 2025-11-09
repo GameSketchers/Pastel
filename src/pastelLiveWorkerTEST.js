@@ -62,7 +62,7 @@ class PastelLiveManager {
     getPlayer(language, roomCode, playerId){return this.players.get(language)?.get(roomCode)?.get(playerId)}
     getFilteredPlayers() {const result=[];for(const [lang, rooms] of this.players){if(this.playerFilter.language!=='all'&&this.playerFilter.language !== lang) continue;for(const [roomCode, room] of rooms){const playersInRoom=[];for(const player of room.values()){if (this.isPlayerFiltered(player, lang, roomCode)) playersInRoom.push(player)}if(playersInRoom.length) result.push({roomCode,players:playersInRoom})}}return result}
     getFilteredPlayersHTML(){self.postMessage({type:'player:renderPlayers',details:{html:this.getFilteredPlayers().map(room=>{const playersHTML=room.players.map(p=>this.renderPlayerHTML(p,room.roomCode)).join('\n');return `<div class="room-wrapper" data-room="${room.roomCode}" style="display:contents">${playersHTML}</div>`}).join('\n')}})}
-    renderPlayerHTML(p,r){return `<div class="player-card"><div class="avatar-badge"><img src="${p.foto}" class="player-avatar">${p.vitorias?'<div class="player-win"><span>'+p.vitorias+'</span></div>':''}</div><div class="player-info"><h3 class="player-name">${p.nick}</h3><span class="room-code">${r}</span></div></div>`}
+    renderPlayerHTML(p,r){return `<div class="player-card" data-name="${p.nick}" data-room="${r}"><div class="avatar-badge"><img src="${p.foto}" class="player-avatar">${p.vitorias?'<div class="player-win"><span>'+p.vitorias+'</span></div>':''}</div><div class="player-info"><h3 class="player-name">${p.nick}</h3><span class="room-code">${r}</span></div></div>`}
     setChatFilter({ language = 'all', filterText = '' }) {
         this.chatFilter = {
             language: language,
@@ -202,3 +202,4 @@ self.onmessage = ({ data }) => {
     });
 
 }
+
