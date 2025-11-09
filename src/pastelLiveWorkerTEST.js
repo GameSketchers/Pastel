@@ -141,10 +141,10 @@ class pastelLiveSockett{
       ws.send(`42[46,0]`);
     };
     ws.onmessage = e => {
-     const d = e.data;
-     if (d[0] === '4' && d[1] === '2' && d[4] === '0') return;
-     this.handleMessage(ws, JSON.parse(d.substring(2)));
-   };
+      const d = e.data;
+      if (!d || d.length < 3 || (d[0] === '4' && d[1] === '2' && d[2] === '"' && d[3] === '1' && d[4] === '0')) return;
+      this.handleMessage(ws, JSON.parse(d.substring(2)));
+    };
     ws.onerror = ws.onclose = () => {this.removeSocket(ws)};
     this.sockets.add(ws);
     if (!this.pingInterval) this.startPing();
@@ -200,6 +200,7 @@ self.onmessage = ({ data }) => {
     });
 
 }
+
 
 
 
