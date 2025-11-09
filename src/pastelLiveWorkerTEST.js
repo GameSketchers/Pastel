@@ -1,4 +1,4 @@
-console.log('Worker loading...');
+console.warn('PASTEL Live Worker Loading...');
 try {
 const sockets = new Map();
 const playerList = new Map();
@@ -54,7 +54,7 @@ class PastelLiveManager {
     isPlayerFiltered(player, lang, roomCode) {
         if (this.playerFilter.language !== 'all' && this.playerFilter.language !== lang) return false;
         if (!this.playerFilter.filterText.length) return true;
-        const nameLower = player.nick.toLowerCase();
+        const nameLower = player.nick.normalize('NFKC').toLowerCase();
         const roomLower = roomCode.toLowerCase();
         return this.playerFilter.filterText.some(ft => nameLower.includes(ft) || roomLower.includes(ft));
     }
@@ -202,9 +202,3 @@ self.onmessage = ({ data }) => {
     });
 
 }
-
-
-
-
-
-
