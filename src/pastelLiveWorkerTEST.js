@@ -47,7 +47,7 @@ class PastelLiveManager {
         if (!player) return null;
         room.delete(playerId);
         if(this.isPlayerFiltered(player, lang, roomCode)){
-            self.postMessage({type:'player:deletePlayer',details:{selector:`.player-card[data-name="${player.nick}"][data-room="\${roomCode}"]`}});
+            self.postMessage({type:'player:deletePlayer',details:{selector:`.player-card[data-name="${player.nick}"][data-room="${roomCode}"]`}});
         }
     }
 
@@ -202,4 +202,5 @@ self.onmessage = ({ data }) => {
     });
 
 }
+
 
