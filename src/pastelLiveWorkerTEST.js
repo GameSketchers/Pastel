@@ -187,7 +187,7 @@ self.onmessage = ({ data }) => {
         }
     break;
     case 'create:socket':
-          if (details.task === "live") pastelLiveSocket.createSocket(details.ip,details.language,details.roomCode,details.successServer,details.server)
+          if (details.task === "live") pastelLiveSocket.createSocket(details.ip,details.language,details.roomCode,details.server,details.success)
     break;
     default:
     console.log('undefined type:', type, details);
@@ -198,4 +198,5 @@ self.onmessage = ({ data }) => {
         type: 'error',
         details: { message: error.message, stack: error.stack }
     });
+
 }
