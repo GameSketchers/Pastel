@@ -15,13 +15,13 @@ class PastelLiveManager {
     }
     setPlayerFilter({ language = 'all', filterText = '' }) {
         this.playerFilter = {
-            language: language.toLowerCase(),
+            language: language,
             filterText: filterText.split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
         };
     }
 
     addPlayer(language, roomCode, player) {
-        const lang = language.toLowerCase();
+        const lang = language;
         if (!this.players.has(lang)) this.players.set(lang, new Map());
         const rooms = this.players.get(lang);
         let roomWrapperHTML = null;
@@ -38,7 +38,7 @@ class PastelLiveManager {
     }
 
     removePlayer(language, roomCode, playerId) {
-        const lang = language.toLowerCase();
+        const lang = language;
         const rooms = this.players.get(lang);
         if (!rooms) return null;
         const room = rooms.get(roomCode);
@@ -59,13 +59,13 @@ class PastelLiveManager {
         return this.playerFilter.filterText.some(ft => nameLower.includes(ft) || roomLower.includes(ft));
     }
 
-    getPlayer(language, roomCode, playerId){return this.players.get(language.toLowerCase())?.get(roomCode)?.get(playerId)}
+    getPlayer(language, roomCode, playerId){return this.players.get(language)?.get(roomCode)?.get(playerId)}
     getFilteredPlayers() {const result=[];for(const [lang, rooms] of this.players){if(this.playerFilter.language!=='all'&&this.playerFilter.language !== lang) continue;for(const [roomCode, room] of rooms){const playersInRoom=[];for(const player of room.values()){if (this.isPlayerFiltered(player, lang, roomCode)) playersInRoom.push(player)}if(playersInRoom.length) result.push({roomCode,players:playersInRoom})}}return result}
     getFilteredPlayersHTML(){self.postMessage({type:'chat:renderMessages',details:{html:this.getFilteredPlayers().map(room=>{const playersHTML=room.players.map(p=>this.renderPlayerHTML(p,room.roomCode)).join('\n');return `<div class="room-wrapper" data-room="${room.roomCode}" style="display:contents">${playersHTML}</div>`}).join('\n')}})}
     renderPlayerHTML(p,r){return `<div class="player-card"><div class="avatar-badge"><img src="${p.foto}" class="player-avatar">${p.vitorias?'<div class="player-win"><span>'+p.vitorias+'</span></div>':''}</div><div class="player-info"><h3 class="player-name">${p.nick}</h3><span class="room-code">${r}</span></div></div>`}
     setChatFilter({ language = 'all', filterText = '' }) {
         this.chatFilter = {
-            language: language.toLowerCase(),
+            language: language,
             filterText: filterText.split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
         };
     }
@@ -99,7 +99,7 @@ class pastelLiveSockett{
     this.actions = {
             "5": (ws, data) => {
               for(let i=0;i<data[5].length;i++){
-              data[5][i].foto ||= `https://gartic.io/static/images/avatar/svg/${data[1].avatar}.svg`;
+              data[5][i].foto ||= `https://gartic.io/static/images/avatar/svg/${data[5][i].avatar}.svg`;
               this.manager.addPlayer(ws.language,ws.roomCode,data[5][i]);
               }
               this.manager.addMessage({type:"system",language:ws.language,style:"success",text:`${ws.roomCode} ~ Pastel Active!`});
@@ -200,5 +200,6 @@ self.onmessage = ({ data }) => {
     });
 
 }
+
 
 
