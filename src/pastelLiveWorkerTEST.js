@@ -122,6 +122,7 @@ class pastelLiveSockett{
             "45": (ws,data) => {
             const player1 = this.manager.getPlayer(ws.language,ws.roomCode,data[1])
             const player2 = this.manager.getPlayer(ws.language,ws.roomCode,data[2])
+            if (!player1 || !player2)  return; 
             this.manager.addMessage({type:"system",language:ws.language,style:"error",text:`${ws.roomCode} ~ ${player1.nick} voted to kick out ${player2.nick}.`})
             },
             "6": (ws,data) => {data[1]===6&&(this.removeSocket(ws)|fallback[ws.fallbackIndex+1]!==undefined&&(this.createSocket(ws.ip,ws.language,ws.roomCode,null,ws.fallbackIndex+1)))}
@@ -202,5 +203,6 @@ self.onmessage = ({ data }) => {
     });
 
 }
+
 
 
