@@ -1,5 +1,5 @@
 
-<p id="pastel" align="center"><img src="./assets/banner.png" style="width:100%"></p>
+<p id="pastel" align="center"><img src="./assets/banner3.png" style="width:100%"></p>
 <div><h1 id="pastel" align="center"> 🌷 PASTEL LIVE ✨</h1></div>
 
 <div align="center">
