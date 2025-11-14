@@ -30,11 +30,11 @@
 <table align="center">
   <tr>
     <td align="center">
-      <img src="./assets/pastelhome.png" alt="Live Player View" width="500"/><br>
+      <img src="./assets/pastel3home.png" alt="Live Player View" width="500"/><br>
       <em>Select Languages & Add Proxy</em>
     </td>
     <td align="center">
-      <img src="./assets/pastelview.png" alt="Interaction Buttons" width="500"/><br>
+      <img src="./assets/pastel3live.png" alt="Interaction Buttons" width="500"/><br>
       <em>Live players & live chat view.</em>
     </td>
   </tr>
