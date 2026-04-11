@@ -135,9 +135,9 @@ pastel-rooms .title.search-open .search-box{grid-column:1/span 2;display:flex}
 .carousel-btn:hover{background:rgba(80,80,100,.9)}
 .carousel-btn:disabled{opacity:.3;cursor:not-allowed}
 .profile-info{text-align:center;font-size:.9rem;color:rgba(255,255,255,.7);min-height:20px}
-.username-input:disabled,.language-select:disabled{opacity:1;cursor:pointer;background:rgba(40,40,60,.7);border-color:rgba(255,255,255,.1);color:#fff;-webkit-text-fill-color:#fff}
-.username-input,.language-select{padding:12px;border-radius:10px;border:2px solid rgba(255,255,255,.1);background:rgba(40,40,60,.7);color:#fff;width:100%;max-width:250px;text-align:center;font-size:.9rem}
-.username-input:focus,.language-select:focus{outline:none;border-color:#ff85a2}
+.username-input:disabled,.profile-section select[name=language]:disabled{opacity:1;cursor:pointer;background:rgba(40,40,60,.7);border-color:rgba(255,255,255,.1);color:#fff;-webkit-text-fill-color:#fff}
+.username-input,.profile-section select[name=language]{padding:12px;border-radius:10px;border:2px solid rgba(255,255,255,.1);background:rgba(40,40,60,.7);color:#fff;width:100%;max-width:250px;text-align:center;font-size:.9rem}
+.username-input:focus,.profile-section select[name=language]:focus{outline:none;border-color:#ff85a2}
 .button-container{display:flex;gap:.6rem;width:120%}
 .button-container .pastel-button{flex:1}
 
