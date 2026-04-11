@@ -130,7 +130,7 @@ pastel-rooms .title.search-open .search-box{grid-column:1/span 2;display:flex}
 .add-profile-frame i{font-size:2rem;color:rgba(255,255,255,.7)}
 .delete-btn.disabled{display:none;cursor:not-allowed;pointer-events:none}
 .delete-btn{position:absolute;top:-8px;right:-8px;width:28px;height:28px;border-radius:50%;background:#dc3545;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;cursor:pointer;opacity:0;transition:opacity .3s;border:2px solid #fff;z-index:20}
-.delete-btn::before{content:"Ã";font-size:.9rem;font-weight:900;line-height:1;transform:translateY(-1px)}
+.delete-btn::before{content:"\E95C";font-family:'ico';font-size:.9rem;font-weight:900;line-height:1;transform:translateY(-1px)}
 .profile-frame:hover .delete-btn{opacity:1}.carousel-btn{width:40px;height:40px;border-radius:50%;border:none;background:rgba(60,60,80,.8);color:#fff;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
 .carousel-btn:hover{background:rgba(80,80,100,.9)}
 .carousel-btn:disabled{opacity:.3;cursor:not-allowed}
