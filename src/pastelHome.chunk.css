@@ -150,6 +150,8 @@ pastel-rooms .title.search-open .search-box{grid-column:1/span 2;display:flex}
 .pastel-button.ic-playHome::before{width:26px;height:20px;background-image:url(/static/images/new/ic_Play.svg)}
 .pastel-button.ic-rooms{--q:rgba(77,171,247,.55);--qw:rgba(25,113,194,.45)}
 .pastel-button.ic-rooms::before{width:20px;height:24px;background-image:url(/static/images/new/ic_Rooms.svg)}
+.pastel-button.icEye{--q:rgba(247,171,77,.55);--qw:rgba(194,113,25,.45)}
+.pastel-button.icEye:before{width:32px;height:27px;background-image:url(/static/images/new/icEye.svg)}
 .pastel-button:disabled{--q:rgba(160,160,160,.6);--qw:rgba(200,200,200,.7);color:#666;cursor:not-allowed;box-shadow:0 2px 6px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.25);filter:grayscale(.2) brightness(.95)}
 .pastel-button:disabled::before{opacity:.5}
 .pastel-button:disabled:hover,
