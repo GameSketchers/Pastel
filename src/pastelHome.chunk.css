@@ -15,7 +15,6 @@ pastel-game:empty::before{content:"You haven't got an active game.";display:flex
 .pastel-credit{position:absolute;bottom:10px;left:10px;font-size:11px;color:#bbb;font-family:"Segoe UI",sans-serif;opacity:.8}
 .pastel-credit a{color:#6cf;text-decoration:none;font-weight:600}
 .pastel-credit .heart{color:#e25555;margin:0 2px}
-.ic-favorite::before{content:'\\E91C'}
 
 /* ROOM LIST AREA */
 .content.rooms{flex:1;overflow-y:auto;padding:0 5px;background:transparent}
@@ -162,7 +161,9 @@ pastel-rooms .title.search-open .search-box{grid-column:1/span 2;display:flex}
 .pastel-button:disabled:hover,
 .pastel-button:disabled:active{transform:none;filter:none;box-shadow:0 2px 6px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.25)}
 .login-btn{justify-content:flex-start;color:#fff}.login-btn:hover{transform:translateY(-2px)}
-.ic-copyLink::before{content:'\\E947'}.ic-copyLink::before,.ic-favorite::before{font-family:'ico';font-weight:400;font-size:20px;-webkit-text-stroke:1px currentColor}
+.ic-copyLink::before{content:'\E947'}
+.ic-favorite::before{content:'\E91C'}
+.ic-copyLink::before,.ic-favorite::before{font-family:'ico';font-weight:400;font-size:20px;-webkit-text-stroke:1px currentColor}
 .ic-copyLink:disabled,.ic-favorite:disabled{visibility:hidden}
 .ic-copyLink,.ic-favorite{position:relative;border:0;background:none;cursor:pointer;transition:transform .16s ease,filter .2s ease}
 .ic-copyLink:hover,.ic-favorite:hover{transform:translateY(-1px) scale(1.02);filter:drop-shadow(0 4px 8px #0003)}
