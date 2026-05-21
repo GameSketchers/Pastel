@@ -190,6 +190,7 @@ pastel-navbar .pastel-navbar-item[data-icon="rooms"]::before{content:"\E942"}
 pastel-navbar .pastel-navbar-item[data-icon="game"]::before{content:"\E94E"}
 pastel-navbar .pastel-navbar-item[data-icon="tools"]::before{content:"\E93F"}
 pastel-navbar .pastel-navbar-item[data-icon="info"]::before{content:"\E944"}
+pastel-navbar .pastel-navbar-item[data-icon="ww"]::before{content:"\E908"}
 @media(hover:hover){pastel-navbar .pastel-navbar-item:hover{color:var(--item-active-color)}}
 
 /* ========== PASTEL NAVBAR > TOOLTIP ========== */
@@ -205,5 +206,25 @@ pastel-tooltip span:last-of-type:hover{background:#fff1;color:#fff;transform:tra
 pastel-tooltip::-webkit-scrollbar{width:4px}
 pastel-tooltip::-webkit-scrollbar-thumb{background:#fff3;border-radius:10px}
 pastel-tooltip::-webkit-scrollbar-track{margin:4px 0}
+
+/* ========== PASTEL WHO WHERE ========== */
+pastel-ww{width:100%;height:100%;max-width:950px;max-height:650px;background:transparent;border-radius:16px;display:flex;flex-direction:column;position:relative;box-shadow:0 0 80px rgba(0,0,0,.9);border:5px solid #1a1a2e;padding:0px 20px 10px 20px}
+.ww-header{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:10px;flex-shrink:0}
+.ww-controls{display:flex;gap:10px;align-items:center;justify-content:center;width:100%}
+.ww-controls select{padding:8px 12px;border-radius:15px;border:2px solid rgba(255,255,255,.1);background:rgba(40,40,60,.7);color:#fff;font-family:NunitoBold;font-size:13px;outline:none;cursor:pointer;transition:0.2s}
+.ww-controls select:focus{border-color:#0a5efba3}
+.ww-filter-wrapper{position:relative;display:flex;align-items:center;background:rgba(26,26,46,.6);border:2px solid #30363d94;border-radius:20px;padding:3px 5px;width:220px;margin-top:5px}
+.ww-filter-btn{flex:1;position:relative;z-index:1;background:none;border:none;color:#797979;font-family:NunitoBold;font-size:10px;text-transform:uppercase;padding:2px 0;cursor:pointer;transition:0.3s;display:flex;flex-direction:column;align-items:center;gap:3px}
+.ww-filter-btn::before{content:'';width:8px;height:8px;border-radius:50%;border:2px solid #797979;background:#1a1a2e;transition:0.3s}
+.ww-filter-btn.active{color:#fff}
+.ww-filter-btn.active::before{border-color:#0a5efb;background:#0a5efb;box-shadow:0 0 8px rgba(10,94,251,0.5)}
+.ww-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;align-content:start;padding-bottom:10px}
+.ww-card{background:#1a1a2ea1;border:2px solid #30363d94;border-radius:12px;padding:8px 12px;display:flex;align-items:center;gap:10px;transition:0.2s;cursor:pointer}
+.ww-avatar{width:40px;height:40px;border-radius:50%;background-size:cover;background-position:center;flex-shrink:0;box-shadow:none}
+.ww-info{display:flex;flex-direction:column;overflow:hidden;flex:1}
+.ww-name{font-family:NunitoBlack;font-size:14px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ww-room{font-family:Nunito;font-size:12px;color:#a8a8b5}
+@media(min-width:767px){.ww-card:hover{background:#2f2f5978;transform:translateY(-2px)}}
+@media(max-width:768px){pastel-ww{border:none;border-radius:0;padding:10px 5px;max-height:100vh}.ww-controls{flex-direction:row;flex-wrap:wrap}.ww-controls select{flex:1;min-width:140px}.ww-grid{grid-template-columns:1fr;gap:5px}.ww-card{border-top:1px solid #bcc7de;border-radius:0;border-left:none;border-right:none;border-bottom:none;background:transparent;padding:6px 10px}}
 
 /* END */
